@@ -11,8 +11,6 @@ const swaggerUi = require('swagger-ui-express')
 /* Referencia al archivo con la descripción */
 const swaggerFile = require('./swagger_output.json')
 
-const verifyJWT = require('./middleware/verifyJWT');
-
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
 });
