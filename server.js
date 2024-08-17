@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const admin = require('firebase-admin');
 const serviceAccount = JSON.parse(process.env.FIREBASE_ADMIN_API)
@@ -16,6 +17,9 @@ admin.initializeApp({
 });
 
 const app = express();
+
+app.use(cors());
+
 app.use(bodyParser.json());
 
 const PORT = process.env.PORT || 5000;
